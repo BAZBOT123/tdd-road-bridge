@@ -1,41 +1,43 @@
-class Bridge {
+class RoadBridge {
 
     constructor() {
-        this.bridge = 0
+        this.numOfCars = 0
+        this.capacity = 2
+        this.closed = false
     }
 
 
     numCars() {
-        return this.bridge
+        return this.numOfCars
     }
 
     recordedCars() {
-        const capacity = 2
-        if (this.bridge === capacity) {
+        if (this.numOfCars === this.capacity) {
             return 'error'
         }
-        this.bridge++
-
+        if (this.closed === true) {
+            return 'ACCIDENT - bridge is closed'
+        }
+        this.numOfCars++
     }
     reducedCars() {
-        const capacity = 1
-        if (this.bridge < capacity) {
-            return this.bridge
+        if (this.numOfCars === 0) {
+            return this.numOfCars
         }
-        return this.bridge--
+        return --this.numOfCars
     }
-
-    changeCapacity() {
-        const capacity = 1
-        if (this.bridge === capacity) {
-            return capacity
-        }
-        this.bridge
+    changeCapacity(newCapacity) {
+        this.capacity = newCapacity
+        return this.capacity
     }
-
-
+    closedBridge() {
+        this.closed = true
+    }
+    openBridge() {
+        this.closed = false
+    }
 }
 
 
 
-module.exports = Bridge;
+module.exports = RoadBridge;

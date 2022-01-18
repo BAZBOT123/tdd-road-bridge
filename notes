@@ -17,3 +17,24 @@ OBJECT   |     PROPERTIES      |  MESSAGES      |   OUTPUT
 bridge   |    cars @number     |  numCars()     |   @number  
 --------------------------------------------------------------
 bridge   |    cars @number     | recordedCars() |   @string  
+
+
+
+* Close the bridge completely
+ - what method will implement this code? Is it a new method or an existing method?
+  : a new method, closeTheBridge()
+ - what do we expect this method to *do*?
+  : close the bridge
+ - What parameters does the method need?
+  : None!
+ - What does the the method return?
+  : a string "the bridge is closed'
+ - What data does the method change, if any? How does it change it?
+  : It will hold the numOfCars property of the RoadBridge class
+ - Is there any other data the method needs? Where will it get it from?
+  : None (later we'll also need to know the bridge capacity but we are ignoring it for now...)
+ - How could I test this code? How will I know it's worked? Can we check some data that should be changed, or the method return value?
+  : If I check the numCars property after I call the method it should increase by 1
+ - What test cases could we have? (Test case = "when I do X, I expect Y to happen" )
+  : When I call addCarToBridge() once, I expect numCars to be 1
+  : When I call addCarToBridge() three times, I expect numCars to be 3
